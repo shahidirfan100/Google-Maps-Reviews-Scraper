@@ -1,0 +1,162 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "review_id": {
+            "title": "Review ID",
+            "type": "string",
+            "description": "Google review identifier"
+        },
+        "place_id": {
+            "title": "Place ID",
+            "type": "string",
+            "description": "Google Maps place ID"
+        },
+        "place_name": {
+            "title": "Place name",
+            "type": "string",
+            "description": "Business or place name"
+        },
+        "place_url": {
+            "title": "Place URL",
+            "type": "string",
+            "description": "Canonical Google Maps URL for the place"
+        },
+        "rating": {
+            "title": "Rating",
+            "type": "integer",
+            "description": "Star rating from 1 to 5"
+        },
+        "review_text": {
+            "title": "Review text",
+            "type": "string",
+            "description": "Review body when the reviewer wrote one"
+        },
+        "review_language": {
+            "title": "Review language",
+            "type": "string",
+            "description": "Language code reported by Google"
+        },
+        "author_name": {
+            "title": "Reviewer",
+            "type": "string",
+            "description": "Reviewer display name"
+        },
+        "author_id": {
+            "title": "Reviewer ID",
+            "type": "string",
+            "description": "Google Maps contributor ID"
+        },
+        "author_url": {
+            "title": "Reviewer profile",
+            "type": "string",
+            "description": "Reviewer Google Maps profile URL"
+        },
+        "author_avatar": {
+            "title": "Reviewer avatar",
+            "type": "string",
+            "description": "Reviewer profile image URL"
+        },
+        "author_review_count": {
+            "title": "Reviewer review count",
+            "type": "integer",
+            "description": "Number of reviews published by the reviewer"
+        },
+        "author_photo_count": {
+            "title": "Reviewer photo count",
+            "type": "integer",
+            "description": "Number of photos published by the reviewer"
+        },
+        "author_badge": {
+            "title": "Reviewer badge",
+            "type": "string",
+            "description": "Local Guide badge text when present"
+        },
+        "is_local_guide": {
+            "title": "Local Guide",
+            "type": "boolean",
+            "description": "True when the reviewer is a Google Local Guide"
+        },
+        "published_at": {
+            "title": "Published at",
+            "type": "string",
+            "description": "Review publication time in ISO 8601 format"
+        },
+        "edited_at": {
+            "title": "Edited at",
+            "type": "string",
+            "description": "Last edit time in ISO 8601 format when the review was edited"
+        },
+        "relative_date": {
+            "title": "Relative date",
+            "type": "string",
+            "description": "Relative date label shown by Google, for example 2 weeks ago"
+        },
+        "review_url": {
+            "title": "Review URL",
+            "type": "string",
+            "description": "Direct Google Maps link to the review"
+        },
+        "photos": {
+            "title": "Review photos",
+            "type": "array",
+            "description": "Photos attached to the review"
+        },
+        "review_context": {
+            "title": "Review context",
+            "type": "object",
+            "description": "Guided review details such as meal type or price per person"
+        },
+        "owner_response_text": {
+            "title": "Owner response",
+            "type": "string",
+            "description": "Business reply text"
+        },
+        "owner_response_at": {
+            "title": "Owner response time",
+            "type": "string",
+            "description": "Business reply time in ISO 8601 format"
+        },
+        "owner_response_relative_date": {
+            "title": "Owner response relative date",
+            "type": "string",
+            "description": "Relative date label for the business reply"
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": ["rating", "review_text", "author_name", "relative_date", "place_name", "review_url"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "rating": {
+                        "label": "Rating",
+                        "format": "number"
+                    },
+                    "review_text": {
+                        "label": "Review",
+                        "format": "text"
+                    },
+                    "author_name": {
+                        "label": "Reviewer",
+                        "format": "text"
+                    },
+                    "relative_date": {
+                        "label": "Date",
+                        "format": "text"
+                    },
+                    "place_name": {
+                        "label": "Place",
+                        "format": "text"
+                    },
+                    "review_url": {
+                        "label": "Review URL",
+                        "format": "link"
+                    }
+                }
+            }
+        }
+    }
+}

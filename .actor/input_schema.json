@@ -1,0 +1,59 @@
+{
+    "title": "Google Maps Reviews Scraper",
+    "description": "Collect reviews for a Google Maps place. Paste a place URL, place ID, or feature ID, choose a sort order, and set how many reviews you need.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "startUrl": {
+            "title": "Google Maps place URL",
+            "type": "string",
+            "description": "A Google Maps place URL, a URL that contains a place ID or cid, a bare place ID (ChIJ...), or a feature ID (0x...:0x...).",
+            "editor": "textfield",
+            "default": "https://www.google.com/maps/place/?q=place_id:ChIJeaIObIIFGTkRJpvlkZbkrpw",
+            "prefill": "https://www.google.com/maps/place/?q=place_id:ChIJeaIObIIFGTkRJpvlkZbkrpw"
+        },
+        "sort": {
+            "title": "Sort reviews by",
+            "type": "string",
+            "description": "Order of the collected reviews. Most relevant keeps Google's default order.",
+            "editor": "select",
+            "default": "most_relevant",
+            "enum": ["most_relevant", "newest", "highest_rating", "lowest_rating"],
+            "enumTitles": ["Most relevant", "Newest", "Highest rating", "Lowest rating"]
+        },
+        "results_wanted": {
+            "title": "Maximum reviews",
+            "type": "integer",
+            "description": "Stop after this many reviews.",
+            "editor": "number",
+            "default": 20,
+            "minimum": 1
+        },
+        "max_pages": {
+            "title": "Maximum pages",
+            "type": "integer",
+            "description": "Safety cap on review pages. Each page holds up to 10 reviews.",
+            "editor": "number",
+            "default": 10,
+            "minimum": 1
+        },
+        "proxyConfiguration": {
+            "title": "Proxy configuration",
+            "type": "object",
+            "description": "Google Maps works best with Apify Proxy. Residential proxies are recommended for repeat runs.",
+            "editor": "proxy",
+            "default": {
+                "useApifyProxy": true,
+                "apifyProxyGroups": ["RESIDENTIAL"]
+            }
+        },
+        "cookies": {
+            "title": "Google session cookies (optional)",
+            "type": "array",
+            "description": "Cookies from a signed-in Google account. Google limits signed-out sessions to the first few reviews; a signed-in session unlocks the rest. Provide an array of objects with name, value, and optional domain and path.",
+            "editor": "json"
+        }
+    },
+    "required": [],
+    "additionalProperties": false
+}

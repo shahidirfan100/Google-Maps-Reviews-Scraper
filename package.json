@@ -1,0 +1,30 @@
+{
+    "name": "google-maps-reviews-scraper",
+    "version": "1.0.0",
+    "description": "Scrape Google Maps reviews with ratings, reviewer details, photos, and owner replies.",
+    "type": "module",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "node src/main.js",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "lint": "eslint",
+        "lint:fix": "eslint --fix",
+        "test": "vitest run"
+    },
+    "dependencies": {
+        "apify": "^3.7.2",
+        "crawlee": "^3.18.2",
+        "impit": "^0.14.8",
+        "playwright": "1.64.1"
+    },
+    "devDependencies": {
+        "@apify/eslint-config": "^2.0.6",
+        "eslint": "^9.39.5",
+        "eslint-config-prettier": "^10.1.8",
+        "prettier": "^3.9.10",
+        "vitest": "^5.0.5"
+    },
+    "author": "Shahid Irfan",
+    "license": "ISC"
+}
